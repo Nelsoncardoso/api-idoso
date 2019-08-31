@@ -1,0 +1,162 @@
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<meta charset="utf-8"/>
+	<title>NS ERP - Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+	<link rel="apple-touch-icon" href="https://nserp.com.br/assets/img/favicon2.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://nserp.com.br/assets/img/favicon2.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://nserp.com.br/assets/img/favicon2.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://nserp.com.br/assets/img/favicon2.png">
+	<link rel="icon" type="image/x-icon" href="https://nserp.com.br/assets/img/favicon2.png"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta content="" name="description"/>
+	<meta content="Networking Solution - Developer by Nelson Cardoso / Walesson Silva / Bruno Moura" name="author"/>
+
+	<link class="main-stylesheet" href="https://nserp.com.br/assets/login/pages.css" rel="stylesheet" type="text/css"/>
+	<link class="main-stylesheet" href="https://nserp.com.br/assets/css/icons/font-awesome/font-awesome.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="https://nserp.com.br/assets/js/login.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<style type="text/css">
+		.error_input{
+			background: #f55753;
+			color: #FFF;
+			margin-bottom: 10px
+		}
+		.error_input p{
+			margin: 0px;
+			padding: 5px 8px 5px 8px;
+		}
+		.form-group-default{
+			border-radius: 0px;
+		}
+		.border-error{
+			border: 1px solid #f55753;
+		}
+		.border-error label{
+			color: #f55753;
+		}
+
+		#login_box {
+            width: 350px;
+			/*margin: auto;*/
+			/*margin-top: 100px;*/
+			border: 2px solid #e5e5e5;
+            z-index: 2147483647;
+            position: absolute;
+            top:20%;
+            left:39%;
+
+
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+			background: #ffffff; /* Old browsers */
+			background: -moz-linear-gradient(left, #ffffff 0%, #e5e5e5 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left, #ffffff 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, #ffffff 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+		}
+
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #video-back {
+            width: auto;
+            height: 100%;
+            z-index: 1;
+            min-width: 100%;
+            min-height: 100%;
+            position: relative;
+        }
+
+	</style>
+</head>
+<body class="fixed-header" onselectstart="return false">
+
+
+
+
+	<div id="login_box" class="">
+
+
+
+				<div id="alertLogin"></div>
+		<div class="p-l-20 m-l-20 p-r-20 m-r-20 p-t-20 m-t-15 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+			<p class="text-center m-b-20"><img src="https://nserp.com.br/assets/img/logo.png" alt="logo" width="35%"></p>
+
+			<form id="form-login"  role="form" method="POST" action="https://nserp.com.br/Login/logar">
+
+				<div class="form-group form-group-default m-b-0" id="fromUsuario">
+					<label><i class="fa fa-user" ></i>&nbsp; Login</label>
+					<div class="controls">
+						<input type="text" name="user" id="user" value="" class="form-control" style="width: 100%;">
+					</div>
+				</div>
+				<div class="error_input"><script>$('#fromUsuario').removeClass('border-error');</script></div>
+
+				<div class="form-group form-group-default m-b-0" id="fromSenha">
+					<label><i class="fa fa-lock" ></i>&nbsp; Senha</label>
+					<div class="controls">
+						<input type="password" class="form-control" name="password" id="password" value="" style="width: 100%;">
+					</div>
+				</div>
+				<div class="error_input"><script>$('#fromSenha').removeClass('border-error');</script></div>
+
+
+				<button class="btn btn-success btn-cons m-t-10" type="submit" style="background-color: #FE5335; width: 100%; border: none; padding: 10px" id="logar">Logar</button>
+				<div id="returnLogin"></div>
+
+				<div class="loading" id="loaderLogin">
+					<img class="loading-image" src="https://nserp.com.br/assets/img/loader.gif" alt="Loading..." /><br>
+				</div>
+
+				<div class="row" style="margin-top:20px;">
+					<div class="col-md-12">
+						<footer>&copy; Copyright 2019 Networking Solutions</footer>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top:20px;">
+					<div class="col-md-12">
+						 <p> IP de acesso:  189.84.127.222 </p>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+    <video id="video_login" autoplay loop>
+
+         <source src="https://nserp.com.br/assets/video_login/Gold.mp4" type="video/mp4" />Seu navegador não suporta a nova tag de video do html5
+         <source src="https://nserp.com.br/assets/video_login/Gold.webm" type="video/webm" />Seu navegador não suporta a nova tag de video do html5
+         <source src="https://nserp.com.br/assets/video_login/Gold.ogv" type="video/webm" />Seu navegador não suporta a nova tag de video do html5 -->
+
+        <!-- <source src="https://nserp.com.br/assets/video_login/Noted.mp4" type="video/mp4" />Seu navegador não suporta a nova tag de video do html5
+        <source src="https://nserp.com.br/assets/video_login/Noted.webm" type="video/webm" />Seu navegador não suporta a nova tag de video do html5
+        <source src="https://nserp.com.br/assets/video_login/Noted.ogv" type="video/webm" />Seu navegador não suporta a nova tag de video do html5 -->
+    </video>
+
+	<script>
+		$("#form-login").submit(function (event) {
+			$('#loaderLogin').show();
+		});
+		$(document).ready(function(){
+			if(!$("input").hasClass('autocomplete')){
+				$("input").attr('autocomplete', 'off');
+			}
+		});
+	</script>
+	 <script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+
+
+	</body>
+</html>

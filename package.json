@@ -1,0 +1,36 @@
+{
+  "name": "projeto-idoso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node app.js",
+    "migrate": "sequelize db:migrate && sequelize db:seed:all",
+    "migrate-undo": "sequelize db:migrate:undo:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "http-server": "^0.11.1",
+    "nodemon": "^1.19.1",
+    "sequelize-cli": "^5.5.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "http": "0.0.0",
+    "lodash": "^4.17.15",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.2",
+    "rimraf": "^2.6.3",
+    "sequelize": "^5.8.7"
+  }
+}
